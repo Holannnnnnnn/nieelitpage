@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>death 0f dark</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .first {
+      background-color:white;
+      color: green;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .first .logo {
+      height: 60px;
+    }
+
+    .first .url-text {
+      text-align: center;
+      font-size: 20px;
+      line-height: 1.4;
+      flex-grow: 1;
+      font-weight: bold;
+    
+    }
+
+   
+    .college-name {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 20px 0 10px 0;
+    }
+
+    .naac-logo {
+      display: block;
+      margin: 0 auto 20px auto;
+      max-width: 150px;
+    }
+
+    .description {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: justify;
+      line-height: 1.6;
+    }
+
+
+
+
+
+
+
+    .second {
+      background-color: green;
+      display: flex;
+      flex-wrap: wrap; 
+    }
+
+    .second > a,
+    .dropdown {
+      position: relative;
+      margin-right: 5px;
+    }
+
+    .second > a,
+    .dropdown > button {
+      background-color: green;
+      color: white;
+      padding: 14px 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .second > a:hover,
+    .dropdown > button:hover {
+      background-color: #004d00;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+
+
+
+
+    
+
+
+    .third {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    .slides img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    #img1:checked ~ .slides img:nth-child(1),
+    #img2:checked ~ .slides img:nth-child(2),
+    #img3:checked ~ .slides img:nth-child(3) {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .dots {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      z-index: 2;
+    }
+
+    .dots label {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid white;
+      background-color: transparent;
+      cursor: pointer;
+      transition: background-color 0.3s, border-color 0.3s;
+      color: black;
+    }
+
+    #img1:checked ~ .dots label[for="img1"],
+    #img2:checked ~ .dots label[for="img2"],
+    #img3:checked ~ .dots label[for="img3"] {
+      background-color: white;
+      border-color: #007bff;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+    .fourth {
+           
+            background-color:white; 
+            
+            display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+        }
+
+
+
+
+
+
+
+
+         
+        .section-heading {
+            background-color: white; 
+            color:  green;
+            padding: 12px 15px;
+            font-weight: bold;
+            font-size: 1.1em;
+            text-transform: uppercase;
+             margin: 0; 
+             margin-bottom: 0x; 
+        }
+        
+         .section-heading:not(.container .section-heading) {
+              margin-top: 0;
+         }
+
+
+
+
+
+
+
+
+        .fifth {
+      
+
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 0px rgba(0,0,0,0.1);
+     
+      
+    }
+
+    .fifth h3{
+       
+       color: green;
+      
+       width: 100%;
+     margin-top: 20px;
+     text-align: justify;
+     font-size: 16px;
+     line-height: 1.6;
+       
+   }
+
+    .about-image {
+      flex: 1 1 300px;
+      max-width: 600px;
+      margin-right: 20px;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .about-text {
+      flex: 1 1 300px;
+      text-align: justify;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .about-full {
+      width: 100%;
+      margin-top: 20px;
+      text-align: justify;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .read-more {
+      color: #006699;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sixth {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 0;
+           
+      gap: 20px;
+      display: flex;
+      flex-wrap: wrap;
+
+        }
+        .sixth h3{
+            color: green;
+       
+       width: 100%;
+     margin-top: 20px;
+     text-align: justify;
+     font-size: 16px;
+     line-height: 1.6;
+        }
+        .sixth-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px; 
+            padding: 5px 0; 
+            border-bottom: 1px solid #eee;
+             padding-left: 15px; 
+             padding-right: 15px;
+        }
+         .sixth-item:last-child {
+            border-bottom: none; 
+         }
+        .sixth-date {
+            background-color: #FFCC80; 
+            color: #5D4037; 
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-right: 10px;
+            white-space: nowrap; 
+            border: 1px solid #E6A44C; 
+            flex-shrink: 0;
+        }
+        .sixth-text {
+            font-size: 0.95em;
+        }
+        .sixth-text a {
+            text-decoration: none;
+            color: #BF360C; 
+            font-weight: bold;
+        }
+        .sixth-text a:hover {
+            text-decoration: underline;
+        }
+
+       
+
+
+
+        .seven-text p {
+            margin: 0; 
+            line-height: 1.5;
+            font-size: 0.95em;
+            color: #444; 
+            flex-direction: column;
+        }
+
+
+
+        
+         .eight{
+
+            background-color:lightgray;
+            display: flex;
+         }
+
+
+         .eight-heading {
+           
+            color:  green;
+            padding: 12px 15px;
+            font-weight: bold;
+            font-size: 1.1em;
+            text-transform: uppercase;
+             margin: 0; 
+             margin-bottom: 0x; 
+        }
+        
+         .eight-heading:not(.container .eight-heading) {
+              margin-top: 0;
+         }
+
+
+
+
+         .eight h3{
+      color:green;
+     }
+
+       
+        .eight-links2{
+          flex-direction: column;
+        }
+
+        .eight-links ol {
+            margin: 0;
+            padding-left: 35px; 
+        }
+        .eight-links li {
+            margin-bottom: 10px; 
+            font-size: 0.95em;
+        }
+        .eight-links a {
+            color: #BF360C;
+            text-decoration: none;
+        }
+        .eight-links a:hover {
+            text-decoration: underline;
+        }
+
+
+
+
+
+
+
+
+
+
+
+       
+        .nine p {
+            margin: 5px 0;
+            line-height: 1.4;
+        }
+        .nine strong {
+            font-size: 1.1em;
+        }
+        .social-icons {
+             margin-top: 10px;
+        }
+        .social-icons img {
+            width: 32px;
+            height: 32px;
+            margin-right: 5px;
+            vertical-align: middle;
+            border-radius: 50%;
+        }
+        .nine-1 {
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .ten {
+            background-color: #06a666d7; 
+            padding: 20px;
+            color: #333333; 
+             margin-bottom: 10px;
+             width: 45%;
+        }
+        .ten h3 {
+            
+             color: white;
+             margin-top: -15px;
+        }
+        .ten h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+
+
+    
+
+        
+.inline-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-group label {
+  font-weight: bold;
+  text-align: right;
+  color: white;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #d9f2f1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+
+
+
+
+
+
+
+
+
+        .submit-button {
+    background-color: #200ac8;
+    color: white;
+    padding: 3px 3px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 3px;
+    width: 20%;
+   
+    margin-left: 160px;
+
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+
+
+
+
+
+        
+        .last {
+            background-color: #0f0101; 
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9em;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+
+
+ 
+  <div class="first">
+    <img src="./image2.jpg" alt="Logo" class="logo">
+    <div class="url-text">
+      NIELIT<br>
+      NATIONAL INSTITUTE OF ELECTRONICS AND INFORMATION TECHNOLOGY
+    </div>
+
+  </div>
+
+  
+
+  
+  
+
+
+
+
+
+               
+<div class="second">
+    <a href="#">Home</a>
+    <a href="#contact">About Us</a>
+  
+    <div class="dropdown">
+      <button>Faculty & Non-Teaching Staff</button>
+      <div class="dropdown-content">
+        <a href="#">Teaching</a>
+        <a href="#">Non-Teaching</a>
+      </div>
+    </div>
+  
+    <div class="dropdown">
+      <button>Administration</button>
+      <div class="dropdown-content">
+        <a href="#">Principal</a>
+        <a href="#">Office</a>
+      </div>
+    </div>
+  
+    <div class="dropdown">
+      <button>Academic</button>
+      <div class="dropdown-content">
+        <a href="#">B.Ed</a>
+        <a href="#">M.Ed</a>
+      </div>
+    </div>
+  
+    <a href="#">Courses</a>
+    <a href="#">Gallery</a>
+    <a href="#">Download Doc</a>
+    <a href="#notice">Notice</a>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+  <div class="third">
+    
+    <input type="radio" name="slider" id="img1" checked>
+    <input type="radio" name="slider" id="img2">
+    <input type="radio" name="slider" id="img3">
+  
+    
+    <div class="slides">
+      <img src="https://nielit.gov.in/sites/default/files/nielitnews/2018/10/DSC_4820.JPG" alt="Group Photo" >
+      <img src="D:/death/03.jpg" alt="Photo 1">
+      <img src="D:/death/04.jpg" alt="Photo 3">
+    </div>
+  
+   
+    <div class="dots">
+      <label for="img1"></label>
+      <label for="img2"></label>
+      <label for="img3"></label>
+    </div>
+  </div>
+ 
+
+
+
+
+
+
+
+
+
+
+  <div class="fourth">
+   
+
+<div class="fifth">
+
+     <h3> NATIONAL INSTITUTE OF ELECTRONICS AND INFORMATION TECHNOLOGY</h3>
+    <div class="about-image">
+      <img src="./image1.jpg" alt="Group Photo">
+    </div>
+
+    
+    <div class="about-text">
+      <p>NIELIT Imphal, founded in 1989, is a leading technical institute under the Ministry of Electronics and Information Technology, Government of India. Situated in Akampat, around 5 km from Imphal city, the institute offers formal courses like Diploma in ECE and CSE, BCA, MCA, and MSc IT, affiliated with Manipur University. It also provides non-formal courses such as NIELIT ‘O’ Level and short-term certifications in emerging areas like AI, Big Data, and Office Automation. With modern facilities and labs, NIELIT Imphal promotes digital literacy, skill development, and offers scholarships to SC/ST/PH/female students, significantly contributing to the region’s technological growth. </p>
+    </div>
+
+    
+    <div class="about-full">
+      <p>The NIELIT Imphal campus is well-equipped with modern infrastructure to support quality education and training. Facilities include smart classrooms, computer labs with high-speed internet, electronics and hardware labs, a digital library, seminar halls, and mechanical workshops. The campus also has hostel accommodations for students, a cafeteria, and recreational areas, providing a comfortable and holistic learning environment.
+        Admission to formal courses like Diploma, BCA, MCA, and MSc IT is conducted based on eligibility criteria set by Manipur University and through entrance tests or academic merit, depending on the program. For non-formal and short-term courses, candidates can apply directly to the institute, with admissions usually on a first-come, first-served basis or through scheduled batches. Scholarships and fee waivers are available for eligible students, especially from underprivileged backgrounds.
+        The institute offers a wide range of courses under both formal and non-formal education. Formal programs include:
+        Diploma in Electronics and Communication Engineering (ECE)
+        Diploma in Computer Science and Engineering (CSE)
+        Bachelor of Computer Applications (BCA)
+        Master of Computer Applications (MCA)        
+        M.Sc. in Information Technology (IT)
+        Non-formal courses include:
+        NIELIT 'O' Level in IT and Multimedia
+        Certificate courses in Artificial Intelligence, Big Data Analytics, Cyber Security, Cloud Computing, Office Automation, and Hardware Maintenance
+        Specialized programs in Software Development, Web Designing, and Mobile App Development
+        These courses are designed to equip students with the knowledge and practical skills required in today’s technology-driven job market. With its industry-aligned curriculum, strong academic support, and government affiliation, NIELIT Imphal continues to be a vital institution for IT and electronics education in the Northeast region.
+
+      <span class="read-more">READ MORE</span></p>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="sixth">
+    
+    <ul class="sixth-list">
+        <div class="section-heading" id="notice">Notice</div>
+        <li class="sixth-item">
+            <span class="sixth-date">05 Dec, 2025</span>
+            <span class="sixth-text"><a href="#">MCA Admission 2025</a></span>
+        </li>
+        <li class="sixth-item">
+            <span class="sixth-date">05 Jun, 2025</span>
+            <span class="sixth-text"><a href="#">BCA Entrance Exam, 2025</a></span>
+        </li>
+        <li class="sixth-item">
+            <span class="sixth-date">27 July, 2025</span>
+            <span class="sixth-text"><a href="#">BCA Admission Notice, 13 July, 2025</a></span>
+        </li>
+        <li class="sixth-item">
+            <span class="sixth-date">18 Apr, 2024</span>
+            <span class="sixth-text"><a href="#">Employment Notice, 06 April 2023</a></span>
+        </li>
+        <li class="sixth-item">
+            <span class="sixth-date">04 May, 2025</span>
+            <span class="sixth-text"><a href="#"> Diploma Admission Notice, 04 May 2025</a></span>
+        </li>
+        <li class="sixth-item">
+            <span class="sixth-date">26 Jul, 2019</span>
+            <span class="sixth-text"><a href="#">Capturing of Finger prints or Bio-Metric attendance</a></span>
+        </li>
+        <div class="section seven-section container">
+            <div class="section-heading">Accreditation</div>
+            <div class="seven-text">
+                <p>
+                    National Assessment and Accreditation Council, Bangalore accredited and awarded B+ grade on 10th February 2007. It is the first college in Manipur which is ever assessed by the NAAC before completion of 4th year of its inauguration. Further, NAAC assessed the College for 2nd Cycle of Accreditation and awarded B Grade on June 25, 2015
+                </p>
+            </div>
+        </div><br>
+    </ul> 
+</div>
+
+</div>
+
+
+
+
+
+
+
+<section class="eight">
+
+
+  <div class="eight-links2">   
+     <div class="eight-links">
+      <h3>Important Link</h3>
+         <ol>
+             <li><a href="#">National Council for Teacher Education, New Delhi.</a></li>
+             <li><a href="#">National Council for Teacher Education, Bhubaneshwar (ERC).</a></li>
+             <li><a href="#">Manipur University</a></li>
+         </ol>
+     </div>
+
+   
+       <div class="eight-links">
+       <h3>OUR OTHER INSTITUTION</h3>
+
+           <ol>
+               <li><a href="#">NIELIT Agartala (Tripura)  </a></li>
+               <li><a href="#">NIELIT Gangtok (Sikkim)</a></li>
+               <li><a href="#">NIELIT Guwahati (Assam)</a></li>
+           </ol>
+       </div>
+   
+
+
+
+  </div><br>
+
+
+
+
+
+
+
+
+
+<div class="container nine">
+    <div class="eight-heading" id="contact">CONTACT ADDRESS</div>
+    <p><strong>NIELIT</strong></p>
+    <p>
+      NATIONAL INSTITUTE OF ELECTRONIC AND INFORMATION TECHNOLOGY<br>
+        AKAMPAT, SINGJAMEI, Imphal East,<br>
+        Manipur.
+    </p>
+    <p><strong>TEL:</strong></p> <p><strong>email:</strong> deathofdark@gmail.com</p>
+
+    <p class="nine-1">CONNECT WITH US ON</p>
+    <div class="social-icons">
+        <a href="#"><img src="D:/death/f.jpg" alt="Facebook"></a>
+        <a href="#"><img src="D:/death/g.jpg" alt="Google+"></a>
+        <a href="#"><img src="D:/death/y.jpg" alt="YouTube"></a>
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="ten">
+    <h3>CONTACT FORM</h3>
+    <form class="inline-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="contact">Contact No.</label>
+        <input type="text" id="contact" name="contact" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+
+
+        <div class="button-container">
+          <button type="submit" class="submit-button">Submit</button>
+      </div>
+    </form>
+</div>
+
+</section>
+
+
+<div class="last">
+    &copy; Copyright NATIONAL INSTITUTE OF ELECTRONIC AND INFORMATION TECHNOLOGY 2025. All Rights Reserved.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
